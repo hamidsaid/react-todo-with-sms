@@ -1,13 +1,30 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    background-color: rgb(241,241,249);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+.content{
+    max-width: 600px;
+    margin: 4% auto;
+}
+
+.row{
+   display: flex;
+    justify-content: space-between;
+}
+
+.task-tile{
+    display: flex;
+    justify-content: space-between;
+}
+.icons{
+    display: flex;
+    flex-direction: row;
+    margin: auto 20px;
+}
+.icons i{
+    padding: 0 10px;
+}
+.todoCard{
+    margin:11px
 }
