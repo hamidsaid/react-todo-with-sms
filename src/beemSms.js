@@ -2,8 +2,8 @@ import React from 'react';
 
 const beemSms = (task,phoneNumber) => {
 
-    const api_key = "8af1879fd7db45fc";
-    const secret_key = "NDU5NGFmMTEyYmFjNGY0ODUyN2Q4Mjk0ZWQ5MDdjOTNlNWUzNDg3ZDBhYzZkOTZiNWMyZDFjZDQ0ZTc4YjY0NQ==";
+    const api_key = "";
+    const secret_key = "";
     const source_addr = "INFO";
 
     const reqBody = {
