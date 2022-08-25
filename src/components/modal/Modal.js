@@ -1,9 +1,17 @@
 import React, {useRef} from 'react';
 import classes from "./Modal.module.css";
+import {useSpring, animated} from "react-spring";
 
 const Modal = (props) => {
     const todoTitleRef = useRef()
     const hideModal = props.onCancel
+
+    //fade animations
+    const fadeStyles = useSpring({
+        to: { opacity: 1,transform: "translate3d(0%, 0px, 0px)" },
+        from: { opacity: 0,transform: "translate3d(0%, -25%, 0px)" },
+        delay:100,
+    })
 
     const handleAddTask = (e) => {
         e.preventDefault()
@@ -49,7 +57,7 @@ const Modal = (props) => {
 
 
     return (
-        <div className={classes.modal} >
+        <animated.div className={classes.modal} style={fadeStyles}>
             <p>{ props.title }</p>
             <form onSubmit={handleAddTask}>
                 <div className={classes.control}>
@@ -59,7 +67,7 @@ const Modal = (props) => {
                 <button className={`${classes.btn} ${classes.btnAlt}`} onClick={props.onCancel}>Cancel</button>
             </form>
 
-        </div>
+        </animated.div>
     );
 };
 

@@ -3,17 +3,9 @@ import Card from "../Card";
 import Modal from "../modal/Modal";
 import Backdrop from "../modal/Backdrop";
 import beemSms from "../../beemSms";
-import { doc, getDoc} from "firebase/firestore";
-import {db} from "../../firebase";
-import {useSpring} from "react-spring";
 
 
 const Todo = (props) => {
-    const fadeStyles = useSpring({
-        to: { opacity: 1,transform: "translate3d(0%, 0px, 0px)" },
-        from: { opacity: 0,transform: "translate3d(0%, -25%, 0px)" },
-        delay:500,
-    })
 
     const id = props.aTodo.id;
     const [isCompleted, setIsCompleted] = useState(props.aTodo.completed)
@@ -43,7 +35,7 @@ const Todo = (props) => {
 
     const handleCompleted = () => {
         setIsCompleted(!isCompleted)
-        beemSms(props.aTodo.todoTitle,props.phone)
+        if(!isCompleted) beemSms(props.aTodo.todoTitle,props.phone)
     }
 
     return (
